@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfig}
+\usepackage[margin=1in]{geometry}
+
+\graphicspath{./build}
+\pagenumbering{gobble}
+
+\title{CSCE 350 Project 2 Sorting Algorithm Analysis}
+\author{Hunter Damron}
+\date{17 Oct. 2018}
+
+\begin{document}
+  \maketitle
+
+  \begin{figure}[h]
+    \centering
+    \subfloat[Number of comparisons for selection sort, quicksort, and the STL sort]{\resizebox{0.45\columnwidth}{!}{\input{build/plotgrowth3}}}
+    \qquad
+    \subfloat[Number of comparisons for only quicksort and the STL sort]{\resizebox{0.45\columnwidth}{!}{\input{build/plotgrowth2}}}
+    \caption{Counts of comparisons in each of three sorting algorithms: selection sort, quicksort, and STL sort.}
+    \label{fig:plots}
+  \end{figure}
+
+  Looking at the plots in Figure~\ref{fig:plots}, selection sort does appear to perform roughly $\frac{n^2}{2}$ comparisons which is consistent with the $\Theta(n^2)$ proven in class.
+  In the plots, quicksort and STL sort both appear linear in the small viewpoint of the function.
+  However, based on previous experience, I know that both of these should be in $\Theta(n \log n)$ which is also consistent with the plots since the value of $\log n$ only varies from $\log 200 \approx 2.3$ to $\log 6000 \approx 3.8$ which is not significant enough to be visible.
+  If larger lists were sorted, this result would be much more noticeable.
+  Because the quicksort appears to have the lowest order of growth, it would be the best for real use.
+\end{document}
