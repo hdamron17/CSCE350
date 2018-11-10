@@ -1,10 +1,12 @@
 BIN=bin
-CXFLAGS+= -std=c++11
 
-.PHONY: all mkbin
-all: $(BIN)/bitmult
+.PHONY: all mkbin test
+all: $(BIN)/mult
 $(BIN)/%: %.cpp | mkbin
-	$(CXX) $(CXXFLAGS) $< -o $@
+	g++ -Wall -std=c++11 $< -o $@
+
+test:
+	@./test.sh
 
 mkbin:
-	mkdir -p $(BIN)
+	@mkdir -p $(BIN)
