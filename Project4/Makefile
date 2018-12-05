@@ -1,4 +1,4 @@
-# TODO: change this to be compatible
+# Copyright 2018 Hunter Damron
 
 BIN=bin
 SOURCES=decode
